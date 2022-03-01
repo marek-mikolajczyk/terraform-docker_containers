@@ -1,0 +1,8 @@
+address = "https://gitlab-geo.marekexample.com/api/v4/projects/33/terraform/state//httpd_live" 
+lock_address = "https://gitlab-geo.marekexample.com/api/v4/projects/33/terraform/state/httpd_live/lock" 
+unlock_address = "https://gitlab-geo.marekexample.com/api/v4/projects/33/terraform/state/httpd_live/lock" 
+username = "root" 
+password = "bERjsmk-rQbh1y_5kB5H" 
+lock_method = "POST" 
+unlock_method = "DELETE" 
+retry_wait_min = "5"

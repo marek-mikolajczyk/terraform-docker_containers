@@ -1,0 +1,14 @@
+02/26/22 02:56:52 container httpd1 has been CREATE
+v1.0.0;httpd1;81
+02/26/22 03:00:18 container httpd1 has been CREATE
+02/26/22 03:10:57 container httpd2 has been DESTROY
+02/26/22 03:11:43 container httpd2 has been CREATE
+02/26/22 03:11:43 container httpd1 has been CREATE
+v1.0.0;httpd2;82
+v1.0.0;httpd1;81
+02/26/22 03:22:20 container httpd2 has been DESTROY
+02/26/22 03:22:20 container httpd1 has been DESTROY
+02/26/22 03:22:42 container httpd1 has been CREATE
+02/26/22 03:22:42 container httpd2 has been CREATE
+v1.0.0;httpd2;82
+v1.0.0;httpd1;81

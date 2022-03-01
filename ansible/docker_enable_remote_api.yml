@@ -1,0 +1,33 @@
+- name: configure remote api on docker service
+  hosts: docker.marekexample.com
+  gather_facts: false
+  become: true
+  tasks:
+      - name: enable remote API calls
+        vars:
+          remote_api: '-H=tcp://0.0.0.0:2375'
+        lineinfile:
+          dest: /lib/systemd/system/docker.service
+          regexp: '^ExecStart='
+          line: 'ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375 --containerd=/run/containerd/containerd.sock'
+        register: result_api
+
+      - name: add firewalld rule
+        firewalld:
+          port: 2375/tcp
+          permanent: yes
+          state: enabled
+        when: result_api.changed
+
+      - name: restart docker service
+        systemd:
+          name: docker
+          daemon_reload: yes
+          state: restarted
+        when: result_api.changed
+
+
+      - name: test if docker api responds
+        uri:
+          url: "http://{{ inventory_hostname }}:2375/images/json"
+          return_content: false

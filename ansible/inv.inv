@@ -1,0 +1,1 @@
+docker.marekexample.com  ansible_host=192.168.0.45 ansible_ssh_user=docker ansible_ssh_pass=docker
