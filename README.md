@@ -29,7 +29,7 @@ Remember to reinitialize terraform, as .terraform directory is not kept in the r
 - live - uses modules to create resources
 - stg - uses standard resource definitions
 - dev - uses count and for_each methods. 
-- dev2 - uses Terraform Cloud as a backend
+- dev2 - uses Terraform Cloud as a backend. But it will not work as docker is an onprem installation
 
 
 # Features

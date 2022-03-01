@@ -6,7 +6,12 @@ terraform {
     }
   }
 
-  backend "local" {}
+  cloud {
+    organization = "example-org-e95f05"
+    workspaces {
+      name = "terraform-docker_containers"
+    }
+  }
 
   required_version = ">= 0.13, <= 2.0"
 }
